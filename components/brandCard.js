@@ -3,7 +3,8 @@ import Card from "./card";
 import Title from "./title";
 import { Text ,StyleSheet,View,Image, Pressable} from "react-native";
 import { useState } from "react";
-import Ionicons from "@expo/vector-icons/Ionicons"
+import Ionicons from "@expo/vector-icons/Ionicons";
+import RootSass from "../sass/root.scss";
 let brandData=[
     {
         logo:"https://stage-images.carandbike.com/car-images/big/maruti-suzuki/maruti-suzuki.png?v=1_2",
@@ -54,7 +55,7 @@ export default function BrandCard(){
                 source={{uri:item.logo}}
                 style={styles.imageStyle}
                 />
-                <Text style={styles.tStyle}>{item.label}</Text>
+                <Text style={RootSass.tStyle}>{item.label}</Text>
             </View>
         )
     }
@@ -77,7 +78,7 @@ export default function BrandCard(){
         </Card>
         </View>
         <Pressable onPress={()=>setIsRead(!isRead)} style={styles.pressContainer}>
-             <Text style={styles.tStyle}>{isRead? "Read Less":"Read More"}</Text> 
+             <Text style={RootSass.tStyle}>{isRead? "Read Less":"Read More"}</Text> 
              <Ionicons name={isRead?"arrow-up":"arrow-down"} size={18} color="white" />
         </Pressable>
         </View>
@@ -103,7 +104,7 @@ const styles=StyleSheet.create({
     },
     fullContainer:{
         height:350,
-        marginBottom:20
+        marginBottom:RootSass.mb20.marginBottom
     },
     imageStyle:{
           height:50,
@@ -111,9 +112,5 @@ const styles=StyleSheet.create({
           objectFit:'contain',
           
     },
-    tStyle:{
-      color:'white',
-      textAlign:'center',
-      marginBottom:20
-    }
+   
 })
