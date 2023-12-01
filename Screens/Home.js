@@ -7,6 +7,8 @@ import TabCard from '../components/tabCard';
 import FavouritesCard from '../components/FavoritesCard';
 import BrandCard from '../components/brandCard';
 import ReserveWithUs from '../components/ReserveWithUs';
+import Accordiaon from '../components/accordian';
+import Faq from '../components/faq';
 
 
 
@@ -26,6 +28,7 @@ export default function Home() {
        <BrandCard/>
        <Wishlist title="Splashing Deals" containerStyle={styles.wishlistContainer}/>
        <ReserveWithUs/>
+      <Faq/>
 
        </ScrollView>
       

@@ -79,7 +79,7 @@ export default function BrandCard(){
         </View>
         <Pressable onPress={()=>setIsRead(!isRead)} style={styles.pressContainer}>
              <Text style={RootSass.tStyle}>{isRead? "Read Less":"Read More"}</Text> 
-             <Ionicons name={isRead?"arrow-up":"arrow-down"} size={18} color="white" />
+             <Ionicons name={isRead?"chevron-up":"chevron-down"} size={18} color="white" />
         </Pressable>
         </View>
         </>
