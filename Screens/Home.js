@@ -9,11 +9,14 @@ import BrandCard from '../components/brandCard';
 import ReserveWithUs from '../components/ReserveWithUs';
 import Accordiaon from '../components/accordian';
 import Faq from '../components/faq';
+import RatingCard from '../components/ratingCard';
+import { useState } from 'react';
 
 
 
 
 export default function Home() {
+  const[wishlist,setWishlist]=useState([])
   return (
     
     <View style={styles.container}>
@@ -21,14 +24,15 @@ export default function Home() {
        <Banner
        url={'../assets/banner.jpg'}
        />
-       <Wishlist title="Wishlist"/>
+       <Wishlist title="Wishlist" setWishlist={setWishlist} wishlist={wishlist}/>
        <TabCard/>
        <FavouritesCard/>
-       <Wishlist title="Moonsoon Arraivals" containerStyle={styles.wishlistContainer}/>
+       <Wishlist title="Moonsoon Arraivals" containerStyle={styles.wishlistContainer} setWishlist={setWishlist} wishlist={wishlist}/>
        <BrandCard/>
-       <Wishlist title="Splashing Deals" containerStyle={styles.wishlistContainer}/>
+       <Wishlist title="Splashing Deals" containerStyle={styles.wishlistContainer} setWishlist={setWishlist} wishlist={wishlist}/>
        <ReserveWithUs/>
       <Faq/>
+      <RatingCard/>
 
        </ScrollView>
       

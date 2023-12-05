@@ -4,7 +4,7 @@ import ImageDataCard from "./imageDataCard";
 import Title from "./title";
 import ViewAllBtn from "./viewAllBtn";
 
-export default function Wishlist({title,containerStyle}){
+export default function Wishlist({title,containerStyle,setWishlist,wishlist}){
     return(
         <View style={containerStyle ? containerStyle:styles.container}>
             <Title title={title}/>
@@ -13,7 +13,7 @@ export default function Wishlist({title,containerStyle}){
             data={CAR_DATA}
             renderItem={(item)=>{
                 return(
-                    <ImageDataCard data={item.item}/>
+                    <ImageDataCard data={item.item} setWishlist={setWishlist} wishlist={wishlist}/>
                 )
             }}
             keyExtractor={(item,index)=>index}

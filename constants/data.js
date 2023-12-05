@@ -1,5 +1,5 @@
 export const CAR_DATA=[
-    {
+    {    id:"0",
         imageUrl:'https://spyne.s3.amazonaws.com/AI/app/edited/car_replace_bg_0ecd03b4-8843-46e9-b124-28726cd6894d.jpg',
         title: "2020 Maruti Suzuki Celerio",
         odometer: "288 Km",
@@ -10,6 +10,7 @@ export const CAR_DATA=[
         
     },
     {
+        id:"1",
         imageUrl:'https://spyne.s3.amazonaws.com/AI/app/edited/car_replace_bg_0ecd03b4-8843-46e9-b124-28726cd6894d.jpg',
         title: "2020 Maruti Suzuki Celerio",
         odometer: "288 Km",
@@ -19,7 +20,8 @@ export const CAR_DATA=[
         dealer_location:"Mico Layout, Bangalore"
         
     },
-    {
+    { 
+        id:"2",
         imageUrl:'https://spyne.s3.amazonaws.com/AI/app/edited/car_replace_bg_0ecd03b4-8843-46e9-b124-28726cd6894d.jpg',
         title: "2020 Maruti Suzuki Celerio",
         odometer: "288 Km",

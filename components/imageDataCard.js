@@ -1,6 +1,24 @@
-import { Image,View,StyleSheet,Text } from "react-native"
+import { Image,View,StyleSheet,Text } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { useState } from "react";
+import { Pressable } from "react-native";
 
-export default function ImageDataCard({data}){
+
+export default function ImageDataCard({data,setWishlist,wishlist}){
+  
+    const addHandler=(id)=>{
+        setWishlist((prev)=>[...prev,id])
+
+    }
+    const removeHandler=(id)=>{
+    
+   let removedWishlist = wishlist.filter(function(item) {
+    return item !== id
+    })
+     setWishlist(removedWishlist)
+    }
+
+  
     return(
 
         <View style={styles.card}>
@@ -12,7 +30,15 @@ export default function ImageDataCard({data}){
             />
         </View>
         <View style={styles.textContainer}>
-            <Text style={styles.cName}>{data.title}</Text>
+            <View style={styles.headContainer}>
+                <View>
+                  <Text style={styles.cName}>{data.title}</Text>
+                </View>
+                <Pressable onPress={wishlist.includes(data?.id)? ()=>removeHandler(data.id):()=>addHandler(data.id)}>
+                   <Ionicons name={wishlist.includes(data?.id)? "heart" : "heart-outline"} size={25} color={wishlist.includes(data?.id)?"yellow":"white"}/>
+                </Pressable>
+            </View>
+            
             <Text style={styles.cSubTxt}>{`${data.odometer} | ${data.fuel} | ${data.transmission}`}</Text>
             <Text style={[styles.cName,styles.mt10]}>{data.price}</Text>
             <View style={styles.hrLine}/>
@@ -71,6 +97,10 @@ const styles=StyleSheet.create({
         color:'#707070',
         fontSize:12,
         marginTop:10
+    },
+    headContainer:{
+         flexDirection:'row',
+         justifyContent:"space-between"
     }
 })
 
