@@ -2,7 +2,7 @@ import Title from "./title";
 import { Image,StyleSheet,View,Text} from "react-native";
 import Card from "./card";
 // import { Rating } from "react-native-ratings"
-import RatingStar from "react-native-rating-stars";
+import RatingStar from "react-native-star-rating";
 import { FlatList } from "react-native-gesture-handler";
 
 
@@ -17,7 +17,7 @@ const ratingData=[
     {
         url:"https://images.carandbike.com/wms/thumbnail_3_3_966531ec18.jpg",
         heading:'Hari',
-        rating:3,
+        rating:3.3,
         description:"I was concerned about budget, but I found my dream car with a perfect EMI solution at car&bike. The car purchase was also effortless and we did not have to worry "
     },
     {
@@ -64,7 +64,7 @@ export default function RatingCard(){
                <Text style={[styles.tStyle,{fontSize:17}]}>{item.heading}</Text>
              </View>
              <View style={styles.ratingChContainer}>
-               <RatingStar numberOfStar={5} ratingState={item.rating} color="#E0C500" size={20}  />
+               <RatingStar  numberOfStar={5} rating={item.rating} fullStarColor="#fcba03" halfStarEnabled={true}  starSize={20}  />
              </View>
          </View>
         
@@ -102,7 +102,8 @@ const styles=StyleSheet.create({
 
     },
     ratingChContainer:{
-        padding:10
+        padding:10,
+     
     },
     headContainer:{
       flexDirection:'row',
