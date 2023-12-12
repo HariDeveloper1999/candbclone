@@ -35,7 +35,7 @@ export default function ImageDataCard({data,setWishlist,wishlist}){
                   <Text style={styles.cName}>{data.title}</Text>
                 </View>
                 <Pressable onPress={wishlist.includes(data?.id)? ()=>removeHandler(data.id):()=>addHandler(data.id)}>
-                   <Ionicons name={wishlist.includes(data?.id)? "heart" : "heart-outline"} size={25} color={wishlist.includes(data?.id)?"yellow":"white"}/>
+                   <Ionicons name={wishlist.includes(data?.id)? "heart" : "heart-outline"} size={25} color={wishlist.includes(data?.id)?"#fcba03":"white"}/>
                 </Pressable>
             </View>
             
