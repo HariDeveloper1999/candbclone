@@ -10,7 +10,7 @@ export default function App() {
   const Stack=createStackNavigator()
   return (
     <>
-    <StatusBar style="auto" />
+    <StatusBar  barStyle = "default" backgroundColor = "#00BCD4" hidden = {true}  />
    
     <NavigationContainer>
     <Stack.Navigator>
